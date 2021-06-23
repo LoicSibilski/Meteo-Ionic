@@ -1,0 +1,9 @@
+.card-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.card-flex ion-list {
+    width: 40vw;
+}

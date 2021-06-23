@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MeteoService } from '../services/meteo.service';
 
 @Component({
   selector: 'app-meteo',
@@ -7,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MeteoComponent implements OnInit {
 
-  constructor() { }
+  city: string;
+
+  weather: any;
+  constructor(private meteoService: MeteoService) { }
 
   ngOnInit() {}
+
+  getWeatherByCity(){
+    this.meteoService.getWeatherByCity(this.city).subscribe(resp=>this.weather = resp);
+  }
 
 }

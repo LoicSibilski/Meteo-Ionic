@@ -12,6 +12,7 @@ import { CatComponent } from './cat/cat.component';
 import { MeteoComponent } from './meteo/meteo.component';
 import { TodoComponent } from './todo/todo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MeteoCardComponent } from './meteo/meteo-card/meteo-card.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MenuComponent,
     CatComponent,
     MeteoComponent,
-    TodoComponent
+    TodoComponent,
+    MeteoCardComponent
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule],

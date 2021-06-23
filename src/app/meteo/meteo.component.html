@@ -1,6 +1,19 @@
 <ion-header>
   <ion-toolbar>
-  <ion-menu-button menu="sideMenu"></ion-menu-button>
+    <ion-menu-button menu="sideMenu"></ion-menu-button>
     <ion-title>Metéo</ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content>
+  <form (ngSubmit)='getWeatherByCity()'>
+    <ion-item>
+      <ion-label>Ville</ion-label>
+      <ion-input [(ngModel)]='city' name='city'></ion-input>
+      <ion-button type="sumbit">OK</ion-button>
+    </ion-item>
+  </form>
+  <div *ngIf="weather">
+    <ion-title>{{weather.city.name}}</ion-title>
+    <app-meteo-card [weather]="w" *ngFor='let w of weather.list'></app-meteo-card>
+  </div>
+</ion-content>
