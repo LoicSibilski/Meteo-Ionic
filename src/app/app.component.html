@@ -1,3 +1,25 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <!-- 
+    balise du conteneur du menu,
+    il faut préciser l'id du content avec lequel le menu partage la page
+   -->
+  <ion-menu menuId="sideMenu" contentId="content">
+    <ion-content>
+      <ion-list>
+        <!-- menu toggle pour cacher auto menu -->
+        <ion-menu-toggle>
+          <!-- routerLink qui va cherche dans le app-routing.module.ts la router a charger -->
+          <ion-item routerLink='meteo'>Meteo</ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink='todo'>Todo</ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink='cats'>Chat</ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <!-- router-outlet composant dynamique qui change en fonction de l'url -->
+  <ion-router-outlet id="content"></ion-router-outlet>
 </ion-app>

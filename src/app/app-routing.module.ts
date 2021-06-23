@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { CatComponent } from './cat/cat.component';
+import { MeteoComponent } from './meteo/meteo.component';
+import { TodoComponent } from './todo/todo.component';
 
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
+  {path: 'meteo', component: MeteoComponent},
+  {path: 'todo', component: TodoComponent},
+  {path: 'cats', component: CatComponent},
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'meteo',
     pathMatch: 'full'
   },
 ];
