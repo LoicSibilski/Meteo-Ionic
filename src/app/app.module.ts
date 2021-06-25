@@ -13,6 +13,7 @@ import { MeteoComponent } from './meteo/meteo.component';
 import { TodoComponent } from './todo/todo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MeteoCardComponent } from './meteo/meteo-card/meteo-card.component';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { MeteoCardComponent } from './meteo/meteo-card/meteo-card.component';
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, Geolocation],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

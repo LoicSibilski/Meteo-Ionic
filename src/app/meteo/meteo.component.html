@@ -10,6 +10,7 @@
       <ion-label>Ville</ion-label>
       <ion-input [(ngModel)]='city' name='city'></ion-input>
       <ion-button type="sumbit">OK</ion-button>
+      <ion-button type='button' (click)="getWeatherByLocation()"><ion-icon name="pin"></ion-icon></ion-button>
     </ion-item>
   </form>
   <div *ngIf="weather">
